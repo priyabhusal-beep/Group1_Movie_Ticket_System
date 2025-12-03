@@ -6,16 +6,16 @@ package view;
 
 /**
  *
- * @author DELL
+ * @author salaj
  */
-public class demo extends javax.swing.JFrame {
+public class Reset_Password extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(demo.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Reset_Password.class.getName());
 
     /**
-     * Creates new form demo
+     * Creates new form Reset_Password
      */
-    public demo() {
+    public Reset_Password() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class demo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new demo().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Reset_Password().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
