@@ -28,21 +28,68 @@ public class Reset_Password extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setText("RESET");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(320, 60, 70, 32);
 
-        pack();
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setText("PASSWORD");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(320, 90, 140, 30);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("New Password");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(320, 160, 130, 16);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
+        jLabel5.setText("Confirm New Password");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(320, 210, 160, 16);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(320, 180, 150, 22);
+
+        jTextField2.addActionListener(this::jTextField2ActionPerformed);
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(320, 230, 150, 22);
+
+        jButton1.setBackground(new java.awt.Color(255, 102, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("CONTINUE");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        getContentPane().add(jButton1);
+        jButton1.setBounds(320, 260, 110, 27);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frame.png"))); // NOI18N
+        jLabel1.setText(" ");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 550, 400);
+
+        setBounds(0, 0, 566, 404);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +117,13 @@ public class Reset_Password extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
