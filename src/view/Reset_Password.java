@@ -32,9 +32,9 @@ public class Reset_Password extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        NewPassword = new javax.swing.JTextField();
+        ConfirmNewPssword = new javax.swing.JTextField();
+        Continue = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,20 +60,20 @@ public class Reset_Password extends javax.swing.JFrame {
         jLabel5.setText("Confirm New Password");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(320, 210, 160, 16);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(320, 180, 150, 22);
+        getContentPane().add(NewPassword);
+        NewPassword.setBounds(320, 180, 150, 22);
 
-        jTextField2.addActionListener(this::jTextField2ActionPerformed);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(320, 230, 150, 22);
+        ConfirmNewPssword.addActionListener(this::ConfirmNewPsswordActionPerformed);
+        getContentPane().add(ConfirmNewPssword);
+        ConfirmNewPssword.setBounds(320, 230, 150, 22);
 
-        jButton1.setBackground(new java.awt.Color(255, 102, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("CONTINUE");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        getContentPane().add(jButton1);
-        jButton1.setBounds(320, 260, 110, 27);
+        Continue.setBackground(new java.awt.Color(255, 102, 0));
+        Continue.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Continue.setForeground(new java.awt.Color(255, 255, 255));
+        Continue.setText("CONTINUE");
+        Continue.addActionListener(this::ContinueActionPerformed);
+        getContentPane().add(Continue);
+        Continue.setBounds(320, 260, 110, 27);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frame.png"))); // NOI18N
         jLabel1.setText(" ");
@@ -83,13 +83,13 @@ public class Reset_Password extends javax.swing.JFrame {
         setBounds(0, 0, 566, 404);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void ConfirmNewPsswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmNewPsswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_ConfirmNewPsswordActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ContinueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,13 +117,13 @@ public class Reset_Password extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField ConfirmNewPssword;
+    private javax.swing.JButton Continue;
+    private javax.swing.JTextField NewPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
