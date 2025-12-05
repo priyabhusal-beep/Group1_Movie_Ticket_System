@@ -1,23 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-<<<<<<< HEAD:src/database/demo/Database.java
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
-package database.demo;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-=======
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+/* Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package database;
->>>>>>> aa5fbd53e9aa33737ec40eb4cf4ae5cb4c8f23c6:src/database/Database.java
+/* Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+import java.sql.*;
 
 /**
  *
- * @author DELL
+ * @author salaj
  */
-<<<<<<< HEAD:src/database/demo/Database.java
 public interface Database {
     Connection openConnection();
     void closeConnection (Connection conn);
@@ -27,7 +18,6 @@ public interface Database {
 }
     
 
-=======
 public class Database extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Database.class.getName());
@@ -91,5 +81,10 @@ public class Database extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+public interface Database {
+    Connection openConnection();
+    void closeConnection(Connection conn);
+    ResultSet runQuery(Connection conn, String query);
+    int executeUpdate(Connection conn, String qyery);
 }
->>>>>>> aa5fbd53e9aa33737ec40eb4cf4ae5cb4c8f23c6:src/database/Database.java
+}

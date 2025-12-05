@@ -13,5 +13,13 @@
             <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/group1_movie_ticket_system/Group1_Movie_Ticket_System.java</file>
             <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/SignUpController.java</file>
 </group>
+            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/group1_movie_ticket_system/Group1_Movie_Ticket_System.java</file>
+            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/view/Reset_Password.java</file>
+            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/model/ResetUser.java</file>
+            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/ResetPasswordController.java</file>
+            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/ResetPasswordDao.java</file>
+            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/database/MySqlConnection.java</file>
+            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/database/Database.java</file>
+        </group>
     </open-files>
 </project-private>

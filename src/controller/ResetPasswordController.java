@@ -12,12 +12,14 @@ import model.ResetUser;
  * @author salaj
  */
 public class ResetPasswordController {
-    public boolean reset(String usernameOrEmail, String newPassword) {
+    public boolean resetPassword(String email, String newPass) {
+
         ResetUser user = new ResetUser();
-        user.setEmail(usernameOrEmail);
-        user.setNewPassword(newPassword);
+        user.setEmail(email);
+        user.setNewPassword(newPass);
 
         ResetPasswordDao dao = new ResetPasswordDao();
+
         return dao.updatePassword(user);
     }
 }

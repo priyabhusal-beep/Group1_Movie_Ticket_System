@@ -12,23 +12,26 @@ import java.sql.*;
  * @author salaj
  */
 public class ResetPasswordDao {
-    MySqlConnection mysql = new MySqlConnection();
+  MySqlConnection mysql = new MySqlConnection();
 
     public boolean updatePassword(ResetUser user) {
+
         Connection conn = mysql.openConnection();
-        String sql = "UPDATE users SET password = ? WHERE username = ? OR email = ?";
+        String sql = "UPDATE users SET password = ? WHERE email = ?";
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
+
             ps.setString(1, user.getNewPassword());
             ps.setString(2, user.getEmail());
-            ps.setString(3, user.getEmail());
 
             return ps.executeUpdate() > 0;
+
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
             mysql.closeConnection(conn);
         }
+
         return false;
     }
 }

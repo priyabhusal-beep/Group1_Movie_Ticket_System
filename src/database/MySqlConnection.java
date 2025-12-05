@@ -2,86 +2,114 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-<<<<<<< HEAD:src/database/demo/MySqlConnection.java
-package database.demo;
 
+package database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-/**
- *
- * @author DELL
- */
-public class MySqlConnection  implements Database {
-
-   @Override
-    public Connection openConnection() {
-        try{
-            String password = "1212";
-            String username = "root";
-            String database = "Cinebook";
-            Connection connection;
-            connection = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/" +database, username, password);
-            if (connection == null) {
-                System.out.println("Not connection");
-            } else {
-                System.out.println("Successfull");
-            }
-            System.out.println(database);
-            return connection;    
-        } catch(SQLException e) {
-            System.out.println(e);
-            return null;
-        }
-    }
-
-    @Override
-    public void closeConnection(Connection conn) {
-      try{
-          if(conn !=null && !conn.isClosed()) {
-              conn.close();
-          }
-          
-      } catch(SQLException e) {
-        System.out.println(e);
-      }
-    }
-
-    @Override
-    public ResultSet runQuery(Connection conn, String query) {
-        try {
-            Statement stmp = conn.createStatement();
-            ResultSet result = stmp.executeQuery(query);
-            return result;
-        } catch(SQLException e) {
-            System.out.println(e);
-            return null;
-        }
-    }
-
-    @Override
-    public int executeUpdate(Connection conn, String query) {
-        try {
-            Statement stmp = conn.createStatement();
-            int result = stmp.executeUpdate(query);
-            return result;
-        } catch (SQLException e) {
-            System.out.println(e);
-            return -1;
-        }
-    }
-=======
-package database;
+import java.sql.*;
 
 /**
  *
  * @author salaj
  */
 public class MySqlConnection {
->>>>>>> aa5fbd53e9aa33737ec40eb4cf4ae5cb4c8f23c6:src/database/MySqlConnection.java
+public class MySqlConnection implements Database{
+
+    @Override
+    public Connection openConnection() {
+    try{
+
+            String username = "root";
+
+            String password = "1436";
+
+            String database = "movie_ticket_system";
+
+            Connection connection;
+
+            connection = DriverManager.getConnection(
+
+                    "jdbc:mysql://localhost:3306/" + database, username, password);
+
+            if(connection == null){
+
+                System.out.println("Database connection fail");
+
+            }else{
+
+                System.out.println("Database connection success");
+
+            }
+
+            return connection;
+            
+        }catch(Exception e){
+
+            System.out.println(e);
+
+            return null;
+
+        }
+    }
+
+    @Override
+    public void closeConnection(Connection conn) {
+         try{
+
+            if(conn != null && !conn.isClosed() ){
+
+                conn.close();
+
+                System.out.println("Connection close");
+
+            }
+        }catch(Exception e){
+
+            System.out.println(e);
+
+            
+
+        }
+    }
+
+    @Override
+    public ResultSet runQuery(Connection conn, String query) {
+         try{
+
+           Statement stmp = conn.createStatement();
+
+           ResultSet result = stmp.executeQuery(query);
+
+           return result;
+
+       
+
+       }catch (Exception e){
+
+           System.out.println(e);
+
+           return null;
+
+       }
+    }
+
+    @Override
+    public int executeUpdate(Connection conn, String qyery) {
+        try{
+
+          Statement stmp = conn.createStatement();
+          int result = stmp.executeUpdate(qyery);
+          return result;
+          
+      }catch(Exception e){
+
+          System.out.println(e);
+
+          return -1;
+
+      }
+    }
     
+}
 }

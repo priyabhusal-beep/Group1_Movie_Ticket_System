@@ -10,8 +10,7 @@ package model;
  */
 public class ResetUser {
     private String Email;
-    private String newPassword;
-    private String confirmNewPassword;
+    private String NewPassword;
 
     public String getEmail() {
         return Email;
@@ -22,18 +21,10 @@ public class ResetUser {
     }
 
     public String getNewPassword() {
-        return newPassword;
+        return NewPassword;
     }
 
     public void setNewPassword(String newPassword) {
-        this.newPassword = newPassword;
-    }
-    
-    public String getconfirmNewPassword() {
-        return confirmNewPassword;
-    }
-    
-    public void setconfirmNewPassword(String confirmNewPassword) {
-        this.confirmNewPassword = confirmNewPassword;
+        this.NewPassword = newPassword;
     }
 }

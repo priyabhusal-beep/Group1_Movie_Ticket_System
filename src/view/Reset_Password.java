@@ -4,17 +4,25 @@
  */
 package view;
 
+import controller.ResetPasswordController;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author salaj
  */
 public class Reset_Password extends javax.swing.JFrame {
-    
+    private String email;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Reset_Password.class.getName());
 
     /**
      * Creates new form Reset_Password
      */
+    public Reset_Password(String email) {
+        this.email = email;
+        initComponents();
+    }
+    
     public Reset_Password() {
         initComponents();
     }
@@ -33,7 +41,7 @@ public class Reset_Password extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         NewPassword = new javax.swing.JTextField();
-        ConfirmNewPssword = new javax.swing.JTextField();
+        ConfirmNewPassword = new javax.swing.JTextField();
         Continue = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -63,9 +71,9 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(NewPassword);
         NewPassword.setBounds(320, 180, 150, 22);
 
-        ConfirmNewPssword.addActionListener(this::ConfirmNewPsswordActionPerformed);
-        getContentPane().add(ConfirmNewPssword);
-        ConfirmNewPssword.setBounds(320, 230, 150, 22);
+        ConfirmNewPassword.addActionListener(this::ConfirmNewPasswordActionPerformed);
+        getContentPane().add(ConfirmNewPassword);
+        ConfirmNewPassword.setBounds(320, 230, 150, 22);
 
         Continue.setBackground(new java.awt.Color(255, 102, 0));
         Continue.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -83,9 +91,9 @@ public class Reset_Password extends javax.swing.JFrame {
         setBounds(0, 0, 566, 404);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ConfirmNewPsswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmNewPsswordActionPerformed
+    private void ConfirmNewPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmNewPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ConfirmNewPsswordActionPerformed
+    }//GEN-LAST:event_ConfirmNewPasswordActionPerformed
 
     private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
         // TODO add your handling code here:
@@ -117,7 +125,7 @@ public class Reset_Password extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ConfirmNewPssword;
+    private javax.swing.JTextField ConfirmNewPassword;
     private javax.swing.JButton Continue;
     private javax.swing.JTextField NewPassword;
     private javax.swing.JLabel jLabel1;
@@ -126,4 +134,24 @@ public class Reset_Password extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
+private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {                                         
+
+    String newPass = NewPassword.getText();
+    String confirmPass = ConfirmNewPassword.getText();
+
+    if (!newPass.equals(confirmPass)) {
+        JOptionPane.showMessageDialog(this, "Passwords do not match!");
+        return;
+    }
+
+    ResetPasswordController controller = new ResetPasswordController();
+    boolean success = controller.resetPassword(email, newPass);
+
+    if (success) {
+        JOptionPane.showMessageDialog(this, "Password updated successfully!");
+        this.dispose();
+    } else {
+        JOptionPane.showMessageDialog(this, "Error updating password.");
+    }
+}
 }
