@@ -4,25 +4,34 @@
  */
 package view;
 
+import controller.LoginController;
 import controller.ResetPasswordController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
+ * Reset password screen.
  *
  * @author salaj
  */
 public class Reset_Password extends javax.swing.JFrame {
+
     private String email;
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Reset_Password.class.getName());
+    private static final Logger logger = Logger.getLogger(Reset_Password.class.getName());
 
     /**
-     * Creates new form Reset_Password
+     * Creates new form Reset_Password with a known email (normal flow from
+     * "Forgot Password").
      */
     public Reset_Password(String email) {
         this.email = email;
         initComponents();
     }
-    
+
+    /**
+     * No-arg constructor (used by GUI builder / testing).
+     */
     public Reset_Password() {
         initComponents();
     }
@@ -45,7 +54,7 @@ public class Reset_Password extends javax.swing.JFrame {
         Continue = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -92,11 +101,48 @@ public class Reset_Password extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConfirmNewPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmNewPasswordActionPerformed
-        // TODO add your handling code here:
+        // Optional: trigger continue when user presses Enter in the confirm field
+        ContinueActionPerformed(evt);
     }//GEN-LAST:event_ConfirmNewPasswordActionPerformed
 
     private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueActionPerformed
-        // TODO add your handling code here:
+        String newPass = NewPassword.getText().trim();
+        String confirmPass = ConfirmNewPassword.getText().trim();
+
+        if (newPass.isEmpty() || confirmPass.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in both password fields.");
+            return;
+        }
+
+        if (!newPass.equals(confirmPass)) {
+            JOptionPane.showMessageDialog(this, "Passwords do not match!");
+            return;
+        }
+
+        if (email == null || email.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                    "No email provided for password reset. Please open this page from 'Forgot Password'.");
+            logger.warning("Reset_Password: email is null or empty.");
+            return;
+        }
+
+        ResetPasswordController controller = new ResetPasswordController();
+        boolean success = controller.resetPassword(email, newPass);
+
+        if (success) {
+            JOptionPane.showMessageDialog(this, "Password updated successfully!");
+
+            // Close this window
+            this.dispose();
+
+            // Redirect back to Login page
+            LoginView loginView = new LoginView();
+            LoginController loginController = new LoginController(loginView);
+            loginController.open();
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Error updating password.");
+        }
     }//GEN-LAST:event_ContinueActionPerformed
 
     /**
@@ -105,9 +151,6 @@ public class Reset_Password extends javax.swing.JFrame {
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -115,12 +158,15 @@ public class Reset_Password extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException
+                 | InstantiationException
+                 | IllegalAccessException
+                 | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form (for testing) */
         java.awt.EventQueue.invokeLater(() -> new Reset_Password().setVisible(true));
     }
 
@@ -134,24 +180,4 @@ public class Reset_Password extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
-private void ContinueActionPerformed(java.awt.event.ActionEvent evt) {                                         
-
-    String newPass = NewPassword.getText();
-    String confirmPass = ConfirmNewPassword.getText();
-
-    if (!newPass.equals(confirmPass)) {
-        JOptionPane.showMessageDialog(this, "Passwords do not match!");
-        return;
-    }
-
-    ResetPasswordController controller = new ResetPasswordController();
-    boolean success = controller.resetPassword(email, newPass);
-
-    if (success) {
-        JOptionPane.showMessageDialog(this, "Password updated successfully!");
-        this.dispose();
-    } else {
-        JOptionPane.showMessageDialog(this, "Error updating password.");
-    }
-}
 }

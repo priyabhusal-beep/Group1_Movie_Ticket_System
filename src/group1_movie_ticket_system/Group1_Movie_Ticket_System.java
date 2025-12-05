@@ -4,8 +4,11 @@
  */
 package group1_movie_ticket_system;
 
-import database.demo.Database;
-import database.demo.MySqlConnection;
+import view.SignUp;
+import controller.SignUpController;
+import database.Database;
+import database.MySqlConnection;
+import java.sql.*;
 
 /**
  *
@@ -20,12 +23,20 @@ public class Group1_Movie_Ticket_System {
         // TODO code application logic here
         
           Database db = new MySqlConnection();
-        if(db.openConnection() !=null) {
+          Connection conn = db.openConnection();
+        if(conn != null) {
             System.out.println("Connection opened");
-        
+            db.closeConnection(conn);
         }else {
             System.out.println("Connection closed");
         }
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                SignUp signUpView = new SignUp();
+                SignUpController controller = new SignUpController(signUpView);
+                controller.open();
+            }
+        });
     }
     
 }

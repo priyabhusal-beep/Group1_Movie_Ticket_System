@@ -3,23 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/SignUp.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/newlogo.jpg</file>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/database/demo/Database.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/database/demo/MySqlConnection.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/model/UserData.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/demo.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/SgnUpDao.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/group1_movie_ticket_system/Group1_Movie_Ticket_System.java</file>
-            <file>file:/C:/Users/DELL/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/SignUpController.java</file>
-</group>
-            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/group1_movie_ticket_system/Group1_Movie_Ticket_System.java</file>
-            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/view/Reset_Password.java</file>
-            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/model/ResetUser.java</file>
-            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/ResetPasswordController.java</file>
-            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/ResetPasswordDao.java</file>
-            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/database/MySqlConnection.java</file>
-            <file>file:/C:/Users/salaj/OneDrive/ドキュメント/NetBeansProjects/Group1_Movie_Ticket_System/src/database/Database.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/database/Database.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/SgnUpDao.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/SignUp.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/LoginView.java</file>
         </group>
     </open-files>
 </project-private>

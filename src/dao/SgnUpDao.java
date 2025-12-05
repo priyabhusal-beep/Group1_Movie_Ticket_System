@@ -4,7 +4,7 @@
  */
 package dao;
 
-import database.demo.MySqlConnection;
+import database.MySqlConnection;
 
 import java.sql.*;
 import model.UserData;
@@ -18,6 +18,10 @@ public class SgnUpDao {
         
     public void signUp(UserData user){      
         Connection conn = mysql.openConnection();
+        if (conn == null) {
+            System.out.println("SgnUpDao: Failed to open DB connection");
+            return;
+        }
         String sql = "Insert into users(mobileNumber,email,fullName,password) Values (?,?,?,?)";        
         try
             (PreparedStatement pstm = conn.prepareStatement(sql)){            
@@ -25,8 +29,6 @@ public class SgnUpDao {
             pstm.setString(2, user.getEmail());
             pstm.setString(3, user.getFullName());
             pstm.setString(4, user.getPassword());
-            
-          
            pstm.executeUpdate();            
         }catch(SQLException e){
             System.out.println(e);
@@ -37,6 +39,10 @@ public class SgnUpDao {
     
         public boolean checkUser(UserData user){        
         Connection conn = mysql.openConnection();
+        if (conn == null) {
+            System.out.println("SgnUpDao: Failed to open DB connection");
+            return false;
+        }
         String sql = "Select * from users where mobileNumber=? or email=?";
         
         try(PreparedStatement pstm = conn.prepareStatement(sql)){            

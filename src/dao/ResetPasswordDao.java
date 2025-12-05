@@ -15,8 +15,11 @@ public class ResetPasswordDao {
   MySqlConnection mysql = new MySqlConnection();
 
     public boolean updatePassword(ResetUser user) {
-
         Connection conn = mysql.openConnection();
+        if (conn == null) {
+            System.out.println("ResetPasswordDao: Failed to open DB connection");
+            return false;
+        }
         String sql = "UPDATE users SET password = ? WHERE email = ?";
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {

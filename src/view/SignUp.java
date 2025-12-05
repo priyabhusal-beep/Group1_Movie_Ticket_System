@@ -160,6 +160,7 @@ public class SignUp extends javax.swing.JFrame {
 
         cancel.setBackground(new java.awt.Color(238, 242, 111));
         cancel.setText("X");
+        cancel.addActionListener(this::cancelActionPerformed);
         getContentPane().add(cancel);
         cancel.setBounds(490, 10, 50, 30);
 
@@ -256,6 +257,10 @@ public class SignUp extends javax.swing.JFrame {
         password.setText("Enter your password");
     }
     }//GEN-LAST:event_passwordFocusLost
+
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelActionPerformed
 
     /**
      * @param args the command line arguments

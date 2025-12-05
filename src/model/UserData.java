@@ -15,6 +15,11 @@ public class UserData {
     private String fullName;
     private String password;
     
+    public UserData(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+    
     public UserData(String mobileNumber, String email, String fullName, String password) {
         this.mobileNumber = mobileNumber;
         this.email = email;
@@ -23,7 +28,7 @@ public class UserData {
     }
     
     public void setMobileNumber(String mobileNumber){
-        this.mobileNumber= mobileNumber;
+        this.mobileNumber = mobileNumber;
     }
     
     public String getMobileNumber(){
@@ -39,7 +44,7 @@ public class UserData {
     }
     
     public void setEmail(String email){
-        this.email=email;
+        this.email = email;
     }
     
     public String getEmail(){
@@ -47,7 +52,7 @@ public class UserData {
     }
     
     public void setFullName (String fullName){
-        this.fullName=fullName;
+        this.fullName = fullName;
     }
    
     public String getFullName () {
@@ -55,7 +60,7 @@ public class UserData {
     }
     
     public void setpassword (String password){
-        this.password=password;
+        this.password = password;
     }
     
     public String getPassword () {

@@ -13,7 +13,7 @@ import java.sql.*;
  *
  * @author salaj
  */
-public class MySqlConnection {
+
 public class MySqlConnection implements Database{
 
     @Override
@@ -22,7 +22,7 @@ public class MySqlConnection implements Database{
 
             String username = "root";
 
-            String password = "1436";
+            String password = "11223344";
 
             String database = "movie_ticket_system";
 
@@ -111,5 +111,4 @@ public class MySqlConnection implements Database{
       }
     }
     
-}
 }
