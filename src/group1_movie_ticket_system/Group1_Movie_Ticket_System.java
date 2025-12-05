@@ -4,6 +4,9 @@
  */
 package group1_movie_ticket_system;
 
+import database.demo.Database;
+import database.demo.MySqlConnection;
+
 /**
  *
  * @author DELL
@@ -15,6 +18,14 @@ public class Group1_Movie_Ticket_System {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+          Database db = new MySqlConnection();
+        if(db.openConnection() !=null) {
+            System.out.println("Connection opened");
+        
+        }else {
+            System.out.println("Connection closed");
+        }
     }
     
 }
