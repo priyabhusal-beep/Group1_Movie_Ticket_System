@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+<<<<<<< HEAD:src/database/demo/MySqlConnection.java
 package database.demo;
 
 import java.sql.Connection;
@@ -73,5 +74,14 @@ public class MySqlConnection  implements Database {
             return -1;
         }
     }
+=======
+package database;
+
+/**
+ *
+ * @author salaj
+ */
+public class MySqlConnection {
+>>>>>>> aa5fbd53e9aa33737ec40eb4cf4ae5cb4c8f23c6:src/database/MySqlConnection.java
     
 }

@@ -1,21 +1,41 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+<<<<<<< HEAD:src/database/demo/Database.java
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+package database.demo;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+=======
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package controller;
+package database;
+>>>>>>> aa5fbd53e9aa33737ec40eb4cf4ae5cb4c8f23c6:src/database/Database.java
 
 /**
  *
  * @author DELL
  */
-public class demo extends javax.swing.JFrame {
+<<<<<<< HEAD:src/database/demo/Database.java
+public interface Database {
+    Connection openConnection();
+    void closeConnection (Connection conn);
+    ResultSet runQuery (Connection conn, String query);
+    int executeUpdate(Connection conn, String query);
+        
+}
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(demo.class.getName());
+
+=======
+public class Database extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Database.class.getName());
 
     /**
      * Creates new form demo
      */
-    public demo() {
+    public Database() {
         initComponents();
     }
 
@@ -66,9 +86,10 @@ public class demo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new demo().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Database().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
+>>>>>>> aa5fbd53e9aa33737ec40eb4cf4ae5cb4c8f23c6:src/database/Database.java
