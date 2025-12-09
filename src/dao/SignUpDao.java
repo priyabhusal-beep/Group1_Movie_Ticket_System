@@ -13,7 +13,7 @@ import model.UserData;
  *
  * @author DELL
  */
-public class SgnUpDao {
+public class SignUpDao {
     MySqlConnection mysql = new MySqlConnection();
         
     public void signUp(UserData user){      

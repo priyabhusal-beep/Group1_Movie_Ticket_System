@@ -4,7 +4,7 @@
  */
 package controller;
 
-import dao.SgnUpDao;
+import dao.SignUpDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -17,7 +17,7 @@ import view.LoginView;
  * @author DELL
  */
 public class SignUpController {
-    private final SgnUpDao userdao = new SgnUpDao();
+    private final SignUpDao userdao = new SignUpDao();
     private final SignUp userView;
     
     public SignUpController(SignUp userView) {
