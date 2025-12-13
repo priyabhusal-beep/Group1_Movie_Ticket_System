@@ -33,7 +33,7 @@ public class SgnUpDao {
         }catch(SQLException e){
             System.out.println(e);
         }finally{
-            mysql.closeConnection(conn);
+            MySql.closeConnection(conn);
         }              
     }
     
@@ -53,7 +53,7 @@ public class SgnUpDao {
         }catch(SQLException ex){
             System.out.println(ex);
         }finally{
-            mysql.closeConnection(conn);
+            MySql.closeConnection(conn);
         }
         return false;   
         }

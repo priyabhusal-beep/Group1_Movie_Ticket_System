@@ -61,4 +61,8 @@ public class MySqlConnection {
         }
         MySqlConnection.closeConnection();
     }
+
+    public Connection openConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
