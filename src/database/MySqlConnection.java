@@ -4,111 +4,65 @@
  */
 
 package database;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.*;
+import java.sql.SQLException;
 
-/**
- *
- * @author salaj
- */
+public class MySqlConnection {
 
-public class MySqlConnection implements Database{
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/theaterproject";
+    private static final String USER = "root";
+    private static final String PASSWORD = "12345"; 
 
-    @Override
-    public Connection openConnection() {
-    try{
+    private static Connection connection = null;
 
-            String username = "root";
-
-            String password = "11223344";
-
-            String database = "movie_ticket_system";
-
-            Connection connection;
-
-            connection = DriverManager.getConnection(
-
-                    "jdbc:mysql://localhost:3306/" + database, username, password);
-
-            if(connection == null){
-
-                System.out.println("Database connection fail");
-
-            }else{
-
-                System.out.println("Database connection success");
-
-            }
-
-            return connection;
-            
-        }catch(Exception e){
-
-            System.out.println(e);
-
-            return null;
-
-        }
-    }
-
-    @Override
-    public void closeConnection(Connection conn) {
-         try{
-
-            if(conn != null && !conn.isClosed() ){
-
-                conn.close();
-
-                System.out.println("Connection close");
-
-            }
-        }catch(Exception e){
-
-            System.out.println(e);
-
-            
-
-        }
-    }
-
-    @Override
-    public ResultSet runQuery(Connection conn, String query) {
-         try{
-
-           Statement stmp = conn.createStatement();
-
-           ResultSet result = stmp.executeQuery(query);
-
-           return result;
-
-       
-
-       }catch (Exception e){
-
-           System.out.println(e);
-
-           return null;
-
-       }
-    }
-
-    @Override
-    public int executeUpdate(Connection conn, String qyery) {
-        try{
-
-          Statement stmp = conn.createStatement();
-          int result = stmp.executeUpdate(qyery);
-          return result;
-          
-      }catch(Exception e){
-
-          System.out.println(e);
-
-          return -1;
-
-      }
-    }
+   
     
+
+    
+    public static Connection getConnection() {
+        if (connection == null) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver"); // Load driver
+                connection = DriverManager.getConnection(URL, USER, PASSWORD);
+                System.out.println("Database connected successfully!");
+            } catch (ClassNotFoundException e) {
+                System.err.println("MySQL JDBC Driver not found.");
+                e.printStackTrace();
+            } catch (SQLException e) {
+                System.err.println("Failed to connect to the database.");
+                e.printStackTrace();
+            }
+        }
+        return connection;
+    }
+
+   
+    public static void closeConnection() {
+        if (connection != null) {
+            try {
+                connection.close();
+                connection = null;
+                System.out.println("Database connection closed.");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+  
+    public static void main(String[] args) {
+        Connection testConn = MySqlConnection.getConnection();
+        if (testConn != null) {
+            System.out.println("Connection test successful!");
+        } else {
+            System.out.println("Connection test failed.");
+        }
+        MySqlConnection.closeConnection();
+    }
+
+    public Connection openConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

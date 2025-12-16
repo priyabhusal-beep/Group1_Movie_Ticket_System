@@ -30,13 +30,13 @@ public class Group1_Movie_Ticket_System {
         }else {
             System.out.println("Connection closed");
         }
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                SignUp signUpView = new SignUp();
-                SignUpController controller = new SignUpController(signUpView);
-                controller.open();
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+////            public void run() {
+////                SignUp signUpView = new SignUp();
+////                SignUpController controller = new SignUpController(signUpView);
+////                controller.open();
+////            }
+////        });
     }
     
 }
