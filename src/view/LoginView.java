@@ -80,6 +80,7 @@ public class LoginView extends javax.swing.JFrame {
 
         Login.setBackground(new java.awt.Color(153, 255, 102));
         Login.setText("LOGIN");
+        Login.addActionListener(this::LoginActionPerformed);
         getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(872, 370, 110, 30));
 
         jLabel1.setBackground(new java.awt.Color(51, 255, 102));
@@ -117,6 +118,11 @@ public class LoginView extends javax.swing.JFrame {
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RegisterActionPerformed
+
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_LoginActionPerformed
 
     /**
      * @param args the command line arguments
