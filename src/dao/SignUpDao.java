@@ -13,7 +13,7 @@ import model.UserData;
  *
  * @author DELL
  */
-public class SgnUpDao {
+public class SignUpDao {
     MySqlConnection mysql = new MySqlConnection();
         
     public void signUp(UserData user){      
@@ -33,7 +33,7 @@ public class SgnUpDao {
         }catch(SQLException e){
             System.out.println(e);
         }finally{
-            MySql.closeConnection(conn);
+            mysql.closeConnection(conn);
         }              
     }
     
@@ -53,7 +53,7 @@ public class SgnUpDao {
         }catch(SQLException ex){
             System.out.println(ex);
         }finally{
-            MySql.closeConnection(conn);
+            mysql.closeConnection(conn);
         }
         return false;   
         }

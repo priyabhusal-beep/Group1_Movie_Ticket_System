@@ -166,7 +166,7 @@ public class SignUp extends javax.swing.JFrame {
         cancel.setBounds(490, 10, 50, 30);
 
         jLabel2.setBackground(new java.awt.Color(255, 204, 102));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/newlogo.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frame.png"))); // NOI18N
         jLabel2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jLabel2FocusLost(evt);

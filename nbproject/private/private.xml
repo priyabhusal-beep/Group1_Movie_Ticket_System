@@ -4,7 +4,6 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/database/Database.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/database/MySqlConnection.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/LoginDao.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/LoginView.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/Reset_Password.java</file>
@@ -14,7 +13,7 @@
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/frame.png</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/newlogo.jpg</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/ResetPasswordDao.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/SgnUpDao.java</file>
+            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/SignUpDao.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/group1_movie_ticket_system/Group1_Movie_Ticket_System.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/Userdao.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/SignUpController.java</file>
@@ -23,16 +22,12 @@
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/TheaterView.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/model/Theater.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/TheaterDao.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/comingsoon.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/profileiconview.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/1paran1.png</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/akhanda1.png</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/finalback.png</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/dhurandar.png</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/TheaterController.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/ResetPasswordController.java</file>
             <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/model/UserData.java</file>
+            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/database/MySqlConnection.java</file>
+            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/profileiconview.java</file>
+            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/comingsoon.java</file>
         </group>
     </open-files>
 </project-private>
