@@ -58,7 +58,7 @@ public class comingsoon extends javax.swing.JFrame {
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jButton1.addActionListener(this::jButton1ActionPerformed);
         getContentPane().add(jButton1);
-        jButton1.setBounds(440, 80, 310, 570);
+        jButton1.setBounds(440, 80, 390, 560);
 
         nowshowing.setText("Now Showing");
         nowshowing.addActionListener(this::nowshowingActionPerformed);
@@ -75,8 +75,9 @@ public class comingsoon extends javax.swing.JFrame {
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(this::jButton3ActionPerformed);
         getContentPane().add(jButton3);
-        jButton3.setBounds(900, 100, 320, 570);
+        jButton3.setBounds(920, 80, 330, 560);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/finalback.png"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1500, 1080));
@@ -90,6 +91,8 @@ public class comingsoon extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Avatar_summary avatar=new Avatar_summary();
+        avatar.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void nowshowingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nowshowingActionPerformed
@@ -102,7 +105,17 @@ public class comingsoon extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        anaconda_summary anaconda=new anaconda_summary();
+        anaconda.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        JhariPachhiKoIndreni_summary jhari=new JhariPachhiKoIndreni_summary();
+        jhari.setVisible(true);
+        
+               
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

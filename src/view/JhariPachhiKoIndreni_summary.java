@@ -8,14 +8,14 @@ package view;
  *
  * @author HP
  */
-public class movie_summary extends javax.swing.JFrame {
+public class JhariPachhiKoIndreni_summary extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(movie_summary.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(JhariPachhiKoIndreni_summary.class.getName());
 
     /**
      * Creates new form movie_summary
      */
-    public movie_summary() {
+    public JhariPachhiKoIndreni_summary() {
         initComponents();
     }
 
@@ -38,30 +38,31 @@ public class movie_summary extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/anupScreenshot 2025-12-11 101621.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 320, 410));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Screenshot 2025-12-22 075141.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 310, 410));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
-        jLabel3.setText("NOW SHOWING");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 180, 50));
+        jLabel3.setText("COMMING SOON");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 180, 50));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        jLabel4.setText("Paran (2025) 146 mins");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, 170, 50));
+        jLabel4.setText("Jhari Pachhi Ko Indreni (2025)");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, 200, 50));
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Paran is a heartfelt family drama about Dharmanath (Neer Shah), who treasures his children as his “essence of life” \nand dreams of growing old in their love. Set in Dhankuta, the film beautifully \nportrays love, legacy, and the true meaning of family.\n\nLanguage:\nGenre: Drama\nCast: Nir ShahMadan Krishna ShresthaPuja Chand LamYaman ShresthaKeki AdhikariAnjana BarailiMahesh Tripathi\nDirector: Deepak Prasad Acharya");
+        jTextArea1.setText("A family drama depicting true struggle of an individual who rises against political corruption, fighting to protect\n his conscience while confronting a system built on injustice.\n\nLanguage:\nGenre: Drama\nCast: Ganesh UpretiDeepa Shree NiroulaRamesh UpretiSarita Giri\nDirector: Arjun Ghimire");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 490, 520, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 520, 150));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 690, 720));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 720));
 
-        setBounds(0, 0, 1200, 650);
+        setBounds(0, 0, 703, 650);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -86,7 +87,7 @@ public class movie_summary extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new movie_summary().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new JhariPachhiKoIndreni_summary().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -3,31 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/database/Database.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/LoginDao.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/LoginView.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/Reset_Password.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/SignUp.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/model/ResetUser.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/WhatsApp%20Image%202025-12-02%20at%2020.44.06_7882f091.jpg</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/frame.png</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/newlogo.jpg</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/ResetPasswordDao.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/SignUpDao.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/group1_movie_ticket_system/Group1_Movie_Ticket_System.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/Userdao.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/SignUpController.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/movie_summary.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/LoginController.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/TheaterView.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/model/Theater.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/TheaterDao.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/TheaterController.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/ResetPasswordController.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/model/UserData.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/database/MySqlConnection.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/profileiconview.java</file>
-            <file>file:/C:/Users/suman/OneDrive/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/comingsoon.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/group1_movie_ticket_system/Group1_Movie_Ticket_System.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/movie_summary.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/TheaterView.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/movie_summary2.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/movie_summary3.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/LoginView.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/Reset_Password.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/LoginController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/ResetPasswordController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/controller/SignUpController.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/SignUp.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/dao/TheaterDao.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/database/MySqlConnection.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/movie_summary4.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/movie_summary1.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/movie_summary5.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/view/movie_summary6.java</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/Screenshot%202025-12-19%20093947.png</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/Screenshot%202025-12-22%20074935.png</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/Screenshot%202025-12-22%20075053.png</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/Screenshot%202025-12-22%20075141.png</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/Screenshot%202025-12-11%20080206.png</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/Screenshot%202025-12-11%20080206_1.png</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/Screenshot%202025-12-11%20114856.png</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/Screenshot%202025-12-11%20102738.png</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/WhatsApp%20Image%202025-12-02%20at%2020.44.06_7882f091.jpg</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/akhanda1.png</file>
+            <file>file:/C:/Users/HP/Documents/NetBeansProjects/Group1_Movie_Ticket_System/src/images/dhurandar.png</file>
         </group>
     </open-files>
 </project-private>
