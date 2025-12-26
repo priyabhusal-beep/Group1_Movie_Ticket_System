@@ -1,3 +1,11 @@
 /build/
 /nbproject/private/
 /src/database/
+
+# NetBeans private files
+nbproject/private/
+*.form
+
+# Logs
+hs_err_pid*.log
+replay_pid*.log
