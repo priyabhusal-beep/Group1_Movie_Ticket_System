@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+
 package database;
 
 import java.sql.Connection;
@@ -12,9 +13,8 @@ import java.sql.*;
 
 /**
  *
- * @author salaj
+ * @author DELL
  */
-
 public class MySqlConnection implements Database{
 
     @Override
@@ -23,9 +23,9 @@ public class MySqlConnection implements Database{
 
             String username = "root";
 
-            String password = "11223344";
+            String password = "1212";
 
-            String database = "movie_ticket_system";
+            String database = "cinebook";
 
             Connection connection;
 
