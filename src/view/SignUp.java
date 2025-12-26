@@ -140,6 +140,7 @@ public class SignUp extends javax.swing.JFrame {
         confirm.setBackground(new java.awt.Color(111, 211, 242));
         confirm.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         confirm.setText("Confirm");
+        confirm.addActionListener(this::confirmActionPerformed);
         getContentPane().add(confirm);
         confirm.setBounds(370, 330, 72, 21);
 
@@ -165,7 +166,7 @@ public class SignUp extends javax.swing.JFrame {
         cancel.setBounds(490, 10, 50, 30);
 
         jLabel2.setBackground(new java.awt.Color(255, 204, 102));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/newlogo.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frame.png"))); // NOI18N
         jLabel2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jLabel2FocusLost(evt);
@@ -261,6 +262,10 @@ public class SignUp extends javax.swing.JFrame {
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelActionPerformed
+
+    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmActionPerformed
 
     /**
      * @param args the command line arguments

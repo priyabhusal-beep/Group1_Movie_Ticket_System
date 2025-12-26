@@ -11,6 +11,7 @@ import view.LoginView;
 import dao.LoginDao;
 import view.SignUp;
 import view.Reset_Password;
+import view.TheaterView;
 
 /**
  *
@@ -47,6 +48,9 @@ public class LoginController {
 
                 if (check) {
                     JOptionPane.showMessageDialog(loginView, "Login successful");
+                    TheaterView view = new TheaterView();
+                    TheaterController controller = new TheaterController(view);
+                    controller.open();
                 } else {
                     JOptionPane.showMessageDialog(loginView, "Invalid credentials");
                 }

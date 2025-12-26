@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.TheaterController;
 import java.awt.Cursor;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -17,11 +18,14 @@ public class TheaterView extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TheaterView.class.getName());
 
+    
+
     /**
      * Creates new form TheaterView
      */
     public TheaterView() {
         initComponents();
+       
     }
 
     /**
@@ -35,127 +39,161 @@ public class TheaterView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         mov1Button1 = new javax.swing.JButton();
         mov1Button2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        comingsoon = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        mov1Button3 = new javax.swing.JButton();
+        timeComboBox = new javax.swing.JComboBox<>();
+        mov1Button4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 1200));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
 
-        jPanel1.setBackground(new java.awt.Color(66, 242, 245));
-        jPanel1.setMinimumSize(new java.awt.Dimension(800, 800));
-        jPanel1.setPreferredSize(new java.awt.Dimension(800, 600));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1500, 1080));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1500, 1080));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1500, 1080));
         jPanel1.setVerifyInputWhenFocusTarget(false);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("ticket");
+        jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
+        jLabel1.setText("CINEBOOK");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 180, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("Now Showing");
-
-        jTextField2.setBackground(new java.awt.Color(66, 242, 245));
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField2.setText("Akhanda 2- Thaandavan");
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(this::jTextField2ActionPerformed);
-
-        jTextField4.setBackground(new java.awt.Color(66, 242, 245));
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jTextField4.setText("Tere Ishk Mein");
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(this::jTextField4ActionPerformed);
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Cinemas");
-
-        mov1Button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Screenshot 2025-12-11 102738.png"))); // NOI18N
-        mov1Button1.setText("jButton1");
+        mov1Button1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mov1Button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ishqmein.png"))); // NOI18N
+        mov1Button1.setText("Tere Ishq Mein");
+        mov1Button1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mov1Button1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        mov1Button1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mov1Button1.addActionListener(this::mov1Button1ActionPerformed);
+        jPanel1.add(mov1Button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 310, 540));
 
-        mov1Button2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Screenshot 2025-12-11 080206.png"))); // NOI18N
-        mov1Button2.setText("jButton1");
+        mov1Button2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mov1Button2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/akhanda1.png"))); // NOI18N
+        mov1Button2.setText("Akhanda");
+        mov1Button2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mov1Button2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        mov1Button2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         mov1Button2.addActionListener(this::mov1Button2ActionPerformed);
+        jPanel1.add(mov1Button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 310, 540));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(194, 194, 194)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(mov1Button2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(mov1Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1372, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(mov1Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(mov1Button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(479, 479, 479)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(598, Short.MAX_VALUE))
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 10, 35, 39));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setText("Profile");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 50, 50, -1));
+
+        comingsoon.setBackground(new java.awt.Color(204, 204, 204));
+        comingsoon.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        comingsoon.setText("COMMING SOON\n");
+        comingsoon.addActionListener(this::comingsoonActionPerformed);
+        jPanel1.add(comingsoon, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 140, -1));
+
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton3.setText("NOW SHOWING");
+        jButton3.addActionListener(this::jButton3ActionPerformed);
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 160, -1));
+
+        mov1Button3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mov1Button3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1paran1.png"))); // NOI18N
+        mov1Button3.setText("paran");
+        mov1Button3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mov1Button3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        mov1Button3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mov1Button3.addActionListener(this::mov1Button3ActionPerformed);
+        jPanel1.add(mov1Button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 150, 290, 540));
+
+        timeComboBox.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        timeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "09:00AM", "11:10AM", "12:30PM", "02:00PM", "03:00PM" }));
+        timeComboBox.addActionListener(this::timeComboBoxActionPerformed);
+        jPanel1.add(timeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 90, -1));
+
+        mov1Button4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        mov1Button4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dhurandar.png"))); // NOI18N
+        mov1Button4.setText("Dhurandar");
+        mov1Button4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mov1Button4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        mov1Button4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        mov1Button4.addActionListener(this::mov1Button4ActionPerformed);
+        jPanel1.add(mov1Button4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 150, 350, 540));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/finalback.png"))); // NOI18N
+        jLabel2.setMaximumSize(new java.awt.Dimension(1500, 1080));
+        jLabel2.setMinimumSize(new java.awt.Dimension(1500, 1080));
+        jLabel2.setPreferredSize(new java.awt.Dimension(1500, 1080));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1530, 1090));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 2029, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1506, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
     private void mov1Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mov1Button1ActionPerformed
         // TODO add your handling code here:
+        Tereiskme_summary tereiskme=new Tereiskme_summary();
+        tereiskme.setVisible(true);
+        
     }//GEN-LAST:event_mov1Button1ActionPerformed
 
     private void mov1Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mov1Button2ActionPerformed
         // TODO add your handling code here:
+        
+        Akhanda_summary akhanda = new Akhanda_summary();
+        akhanda.setVisible(true);
     }//GEN-LAST:event_mov1Button2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        profileiconview profile = new profileiconview();
+        profile.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void comingsoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comingsoonActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        comingsoon upcoming = new comingsoon();
+        upcoming.setVisible(true);
+    }//GEN-LAST:event_comingsoonActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void mov1Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mov1Button3ActionPerformed
+        // TODO add your handling code here:
+        paran_summary paran =new paran_summary();
+        paran.setVisible(true);
+    }//GEN-LAST:event_mov1Button3ActionPerformed
+
+    private void timeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_timeComboBoxActionPerformed
+
+    private void mov1Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mov1Button4ActionPerformed
+        // TODO add your handling code here:
+        dhurandar_summary dhurandar=new dhurandar_summary();
+        dhurandar.setVisible(true);
+        
+        
+    }//GEN-LAST:event_mov1Button4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,14 +223,18 @@ public class TheaterView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton comingsoon;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton mov1Button1;
     private javax.swing.JButton mov1Button2;
+    private javax.swing.JButton mov1Button3;
+    private javax.swing.JButton mov1Button4;
+    private javax.swing.JComboBox<String> timeComboBox;
     // End of variables declaration//GEN-END:variables
 
 
@@ -220,6 +262,7 @@ public void Addmov2ButtonListener(ActionListener listener){
     System.out.println("Button Clicked");
          
 }
+
 
 
 
