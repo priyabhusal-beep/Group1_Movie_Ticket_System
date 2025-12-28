@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author HP
@@ -30,7 +32,7 @@ public class Tereiskme_summary extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        movieName = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -45,9 +47,9 @@ public class Tereiskme_summary extends javax.swing.JFrame {
         jLabel3.setText("NOW SHOWING");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 180, 50));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        jLabel4.setText("Tere Ishk Mein (2025) ");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 170, 50));
+        movieName.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        movieName.setText("Tere Ishk Mein (2025) ");
+        getContentPane().add(movieName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 170, 50));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -94,12 +96,15 @@ public class Tereiskme_summary extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel movieName;
     // End of variables declaration//GEN-END:variables
 
     void setVisble(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+
+
 }

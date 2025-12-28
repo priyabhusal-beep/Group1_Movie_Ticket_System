@@ -17,6 +17,7 @@ public class Akhanda_summary extends javax.swing.JFrame {
      */
     public Akhanda_summary() {
         initComponents();
+        
     }
 
     /**

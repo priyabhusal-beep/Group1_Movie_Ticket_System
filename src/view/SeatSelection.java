@@ -476,7 +476,7 @@ public class SeatSelection extends javax.swing.JFrame {
         getContentPane().add(totalAmount);
         totalAmount.setBounds(450, 430, 100, 30);
 
-        frame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.jpg"))); // NOI18N
+        frame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
         getContentPane().add(frame);
         frame.setBounds(0, 0, 590, 550);
 
