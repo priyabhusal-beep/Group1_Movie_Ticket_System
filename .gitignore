@@ -6,7 +6,5 @@ nbproject/private/
 hs_err_pid*.log
 replay_pid*.log
 
-# NetBeans build output
-build/
+# Build output
 dist/
-
