@@ -147,16 +147,10 @@ public class TheaterView extends javax.swing.JFrame {
 
     private void mov1Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mov1Button1ActionPerformed
         // TODO add your handling code here:
-        Tereiskme_summary tereiskme=new Tereiskme_summary();
-        tereiskme.setVisible(true);
-        
     }//GEN-LAST:event_mov1Button1ActionPerformed
 
     private void mov1Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mov1Button2ActionPerformed
         // TODO add your handling code here:
-        
-        Akhanda_summary akhanda = new Akhanda_summary();
-        akhanda.setVisible(true);
     }//GEN-LAST:event_mov1Button2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -179,8 +173,6 @@ public class TheaterView extends javax.swing.JFrame {
 
     private void mov1Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mov1Button3ActionPerformed
         // TODO add your handling code here:
-        paran_summary paran =new paran_summary();
-        paran.setVisible(true);
     }//GEN-LAST:event_mov1Button3ActionPerformed
 
     private void timeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeComboBoxActionPerformed
@@ -189,10 +181,6 @@ public class TheaterView extends javax.swing.JFrame {
 
     private void mov1Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mov1Button4ActionPerformed
         // TODO add your handling code here:
-        dhurandar_summary dhurandar=new dhurandar_summary();
-        dhurandar.setVisible(true);
-        
-        
     }//GEN-LAST:event_mov1Button4ActionPerformed
 
     /**
@@ -267,3 +255,4 @@ public void Addmov2ButtonListener(ActionListener listener){
 
 
 }
+
