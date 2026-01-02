@@ -27,7 +27,7 @@ public class SignUpController {
 
         userView.AddSignInListener(new SignInActionListener());
 
-        userView.AddCancelListener(e -> close());
+        
     }
 
     public void open() {
@@ -46,6 +46,17 @@ public class SignUpController {
                 String email = userView.getEmail().getText();
                 String fullName = userView.getFullName().getText();
                 String password = userView.getPassword().getText();
+                
+                if (!email.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {
+                JOptionPane.showMessageDialog(
+                    userView,
+                    "Email must be a valid Gmail address (example@gmail.com)",
+                    "Invalid Email",
+                    JOptionPane.ERROR_MESSAGE
+                );
+                userView.getEmail().requestFocus();
+                return; // ⛔ STOP — do not continue
+            }            
 
                 UserData userdata = new UserData(mobileNumber, email, fullName, password);
 

@@ -17,6 +17,7 @@ public class comingsoon extends javax.swing.JFrame {
      */
     public comingsoon() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -28,56 +29,51 @@ public class comingsoon extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        avatarMovie = new javax.swing.JButton();
+        anacondaMovie = new javax.swing.JButton();
         nowshowing = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        indreniMovie = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1314, 930));
         getContentPane().setLayout(null);
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Avatarfinal.png"))); // NOI18N
-        jButton2.setText("Avatar");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerifyInputWhenFocusTarget(false);
-        jButton2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        getContentPane().add(jButton2);
-        jButton2.setBounds(80, 80, 280, 570);
+        avatarMovie.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        avatarMovie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Avatarfinal.png"))); // NOI18N
+        avatarMovie.setText("Avatar");
+        avatarMovie.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        avatarMovie.setVerifyInputWhenFocusTarget(false);
+        avatarMovie.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        avatarMovie.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        avatarMovie.addActionListener(this::avatarMovieActionPerformed);
+        getContentPane().add(avatarMovie);
+        avatarMovie.setBounds(80, 80, 280, 570);
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/anoconda.png"))); // NOI18N
-        jButton1.setText("Anoconda");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        getContentPane().add(jButton1);
-        jButton1.setBounds(440, 80, 390, 560);
+        anacondaMovie.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        anacondaMovie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/anoconda.png"))); // NOI18N
+        anacondaMovie.setText("Anoconda");
+        anacondaMovie.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        anacondaMovie.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        anacondaMovie.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        anacondaMovie.addActionListener(this::anacondaMovieActionPerformed);
+        getContentPane().add(anacondaMovie);
+        anacondaMovie.setBounds(440, 80, 390, 560);
 
         nowshowing.setText("Now Showing");
         nowshowing.addActionListener(this::nowshowingActionPerformed);
         getContentPane().add(nowshowing);
-        nowshowing.setBounds(200, 10, 120, 23);
+        nowshowing.setBounds(440, 20, 120, 23);
 
-        jButton4.setText("Coming Soon");
-        getContentPane().add(jButton4);
-        jButton4.setBounds(490, 10, 140, 23);
-
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/indreni.png"))); // NOI18N
-        jButton3.setText("Indreni");
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addActionListener(this::jButton3ActionPerformed);
-        getContentPane().add(jButton3);
-        jButton3.setBounds(920, 80, 330, 560);
+        indreniMovie.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        indreniMovie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/indreni.png"))); // NOI18N
+        indreniMovie.setText("Indreni");
+        indreniMovie.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        indreniMovie.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        indreniMovie.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        indreniMovie.addActionListener(this::indreniMovieActionPerformed);
+        getContentPane().add(indreniMovie);
+        indreniMovie.setBounds(920, 80, 330, 560);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/finalback.png"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1500, 1080));
@@ -89,11 +85,14 @@ public class comingsoon extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void avatarMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avatarMovieActionPerformed
         // TODO add your handling code here:
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("comingsoon: opening Avatar_summary");
+        this.dispose();
         Avatar_summary avatar=new Avatar_summary();
         avatar.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_avatarMovieActionPerformed
 
     private void nowshowingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nowshowingActionPerformed
         // TODO add your handling code here:
@@ -103,19 +102,25 @@ public class comingsoon extends javax.swing.JFrame {
         
     }//GEN-LAST:event_nowshowingActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void anacondaMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anacondaMovieActionPerformed
         // TODO add your handling code here:
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("comingsoon: opening anaconda_summary");
+        this.dispose();
         anaconda_summary anaconda=new anaconda_summary();
         anaconda.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_anacondaMovieActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void indreniMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indreniMovieActionPerformed
         // TODO add your handling code here:
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("comingsoon: opening JhariPachhiKoIndreni_summary");
+        this.dispose();
         JhariPachhiKoIndreni_summary jhari=new JhariPachhiKoIndreni_summary();
         jhari.setVisible(true);
         
                
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_indreniMovieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,10 +148,9 @@ public class comingsoon extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton anacondaMovie;
+    private javax.swing.JButton avatarMovie;
+    private javax.swing.JButton indreniMovie;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton nowshowing;
     // End of variables declaration//GEN-END:variables

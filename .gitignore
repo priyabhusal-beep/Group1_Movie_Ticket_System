@@ -1,6 +1,6 @@
 # NetBeans private files
 nbproject/private/
-*.form
+
 
 # Logs
 hs_err_pid*.log
@@ -9,4 +9,15 @@ replay_pid*.log
 # NetBeans build output
 build/
 dist/
+
+# IDE and system files
+.nbproject/private/
+Thumbs.db
+.DS_Store
+*.log
+*.class
+
+# Keep sources and images tracked
+!src/
+!lib/
 

@@ -25,22 +25,21 @@ import view.SeatSelection;
  * @author DELL
  */
 public class SeatSelectionController {
-
     // =========================
     // STATE VARIABLES
-    // =========================
+     // =========================
     private int userId;
     private int showId;
     private int seatPrice = 200;
     private int totalAmount = 0;
     private String movieName;
-    private String theaterName;
+
 
     private final List<String> selectedSeats = new ArrayList<>();
 
     // =========================
     // DAO & VIEW
-    // =========================
+
     private final SeatSelectionDao seatDao = new SeatSelectionDao();
     private final BookingDao bookingDao = new BookingDao();
     private final SeatSelection sselection;
@@ -53,8 +52,10 @@ public class SeatSelectionController {
         this.userId = userId;
         this.showId = showId;
 
-//        sselection.AddButtonseatsListener(new SeatSelectListener());
-//        sselection.AddBuyTicketListener(new BuyTicketListener());
+        
+
+        sselection.AddButtonseatsListener(new SeatSelectListener());
+        sselection.AddBuyTicketListener(new BuyTicketListener());
     }
 
     public SeatSelectionController(SeatSelection sselection) {
@@ -111,14 +112,14 @@ public class SeatSelectionController {
 
             // save seats
             for (String seatNo : selectedSeats) {
-                bookingDao.saveBookingSeat(bookingId, seatNo, seatPrice);
+                bookingDao.saveBookingSeat(bookingId,showId, seatNo, seatPrice);
                
             }
 
             // open booking confirmation
             // set movie & theater if not already
             booking.setMovieName(sselection.getMovieLabel().getText());
-            //booking.setTheaterName(sselection.getTheaterName().getText());
+
 
             // open booking confirmation
             BookingTicket ticketView = new BookingTicket();
@@ -130,8 +131,11 @@ public class SeatSelectionController {
             ticketView.setVisible(true);
             close();
 
-            ticketView.setVisible(true);
-            close();
+//            ticketView.setVisible(true);
+//            close();
+
+            
+            
         }
     }
 
@@ -165,6 +169,7 @@ public class SeatSelectionController {
 
 
     }
+    
 }
 
 

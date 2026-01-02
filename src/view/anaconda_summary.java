@@ -17,6 +17,7 @@ public class anaconda_summary extends javax.swing.JFrame {
      */
     public anaconda_summary() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,20 +34,22 @@ public class anaconda_summary extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        seatSelection = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Screenshot 2025-12-26 081528.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, 440));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2ANACONDA.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 310, 440));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel3.setText("COMMING SOON");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 180, 50));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        jLabel4.setText("Avatar: Fire and Ash (2025)");
+        jLabel4.setText("Anaconda");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 190, 30));
 
         jTextArea1.setEditable(false);
@@ -56,14 +59,37 @@ public class anaconda_summary extends javax.swing.JFrame {
         jTextArea1.setText("Jake and Neytiri's family grapples with grief after Neteyam's death, encountering a new, aggressive Na'vi tribe, \nthe Ash People, who are led by the fiery Varang, as the conflict on Pandora escalates and a new moral focus \nemerges.\n\nLanguage: English\nGenre: Action, Adventure\nCast: Kate WinsletSigourney WeaverZoe Saldaña\nDirector: James Cameron");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 520, 120));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 530, 520, 120));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
+        seatSelection.setBackground(new java.awt.Color(153, 204, 255));
+        seatSelection.setText("Seat Selection");
+        getContentPane().add(seatSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 490, 180, -1));
+
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
+        getContentPane().add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACKGROUND_PAGE.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 720));
 
-        setBounds(0, 0, 704, 650);
+        setBounds(0, 0, 703, 727);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void seatSelectionActionPerformed(java.awt.event.ActionEvent evt) {
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("anaconda_summary: opening SeatSelection");
+        SeatSelection seat = new SeatSelection(this.jLabel4.getText(), "");
+        seat.setVisible(true);
+        this.dispose();
+    }
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("anaconda_summary: going back to comingsoon");
+        comingsoon cs = new comingsoon();
+        cs.setVisible(true);
+        this.dispose();
+    }
 
     /**
      * @param args the command line arguments
@@ -91,11 +117,13 @@ public class anaconda_summary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton seatSelection;
     // End of variables declaration//GEN-END:variables
 }

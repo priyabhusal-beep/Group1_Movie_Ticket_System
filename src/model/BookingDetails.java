@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author DELL
@@ -17,6 +19,9 @@ public class BookingDetails {
     private int showId;
     private int seatPrice;
     private int totalPayingAmount;
+    private LocalDate bookingTime ;
+    private LocalDate showTime;
+    private String paymentMethod;
     
     public BookingDetails(String movieName,String theaterName, String seatsNumber, int totalSeats, int totalPayingAmount  ){
         this.movieName = movieName;
@@ -101,4 +106,27 @@ public class BookingDetails {
         return totalPayingAmount;
     }
     
+    public LocalDate getBookingTime(){
+        return bookingTime;
+    }
+ 
+    public void setBookingTime(LocalDate bookingTime){
+        this.bookingTime = bookingTime;
+    }
+    
+    public LocalDate getShowTime(){
+        return showTime;
+    }
+    
+    public void setShowTime(LocalDate showTime){
+        this.showTime = showTime;
+    }
+    
+    public String getPaymentMethod(){
+        return paymentMethod;
+    }
+    
+    public void setPaymentMethod(String paymentMethod){
+        this.paymentMethod = paymentMethod;
+    }
 }

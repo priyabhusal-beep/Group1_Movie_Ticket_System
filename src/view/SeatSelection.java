@@ -2,6 +2,9 @@ package view;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import java.util.stream.Collectors;
 
 
 
@@ -15,6 +18,7 @@ public class SeatSelection extends javax.swing.JFrame {
      */
     public SeatSelection() {
         initComponents(); //buttons are created
+        setLocationRelativeTo(null);
         
         seats.add(A1);
         seats.add(A2);
@@ -68,6 +72,78 @@ public class SeatSelection extends javax.swing.JFrame {
        
         
     }
+
+    private String movie;
+    private String showTime;
+    private final int seatPrice = 200;
+
+    public SeatSelection(String movie, String showTime) {
+        this();
+        this.movie = movie;
+        this.showTime = showTime;
+        this.movieLabel.setText(movie);
+        this.dateTime.setText(showTime);
+        initSeatStates();
+        attachSeatListeners();
+        attachBuyListener();
+    }
+
+    private void initSeatStates() {
+        for (JButton b : seats) {
+            b.putClientProperty("state", "AVAILABLE");
+            b.setBackground(Color.WHITE);
+        }
+        totalAmount.setText("0");
+    }
+
+    private void attachSeatListeners() {
+        for (JButton b : seats) {
+            b.addActionListener(evt -> {
+                // make handler idempotent for rapid clicks
+                b.setEnabled(false);
+                String state = (String) b.getClientProperty("state");
+                if (state == null) state = "AVAILABLE";
+                switch (state) {
+                    case "AVAILABLE":
+                        b.putClientProperty("state", "SELECTED");
+                        b.setBackground(Color.YELLOW);
+                        break;
+                    case "SELECTED":
+                        b.putClientProperty("state", "AVAILABLE");
+                        b.setBackground(Color.WHITE);
+                        break;
+                    default:
+                        // RESERVED or SOLD -> do nothing
+                        break;
+                }
+                updateTotal();
+                b.setEnabled(true);
+            });
+        }
+    }
+
+    private void updateTotal() {
+        long count = seats.stream()
+                .filter(b -> "SELECTED".equals(b.getClientProperty("state")))
+                .count();
+        totalAmount.setText(String.valueOf(count * seatPrice));
+    }
+
+    private void attachBuyListener() {
+        buyTicket.addActionListener(e -> {
+            // collect selected seats
+            String seatsSelected = seats.stream()
+                    .filter(b -> "SELECTED".equals(b.getClientProperty("state")))
+                    .map(b -> b.getText())
+                    .collect(Collectors.joining(","));
+            String total = totalAmount.getText();
+            // open BookingTicket and pass data
+            BookingTicket booking = new BookingTicket(movie, seatsSelected, String.valueOf(seatPrice),
+                    String.valueOf(seatsSelected.isEmpty() ? 0 : seatsSelected.split(",").length), java.time.LocalDateTime.now().toString(), showTime, total);
+            booking.setVisible(true);
+            this.dispose();
+        });
+    }
    
 
     /**
@@ -82,8 +158,7 @@ public class SeatSelection extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        movieFigure = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         cinemaLocation = new javax.swing.JLabel();
         movieLabel = new javax.swing.JLabel();
         dateTime = new javax.swing.JLabel();
@@ -157,33 +232,28 @@ public class SeatSelection extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(589, 570));
-        setPreferredSize(new java.awt.Dimension(589, 570));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        movieFigure.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tere ishq mein.jpg"))); // NOI18N
-        getContentPane().add(movieFigure);
-        movieFigure.setBounds(20, 60, 100, 100);
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        getContentPane().add(jButton1);
-        jButton1.setBounds(10, 10, 30, 30);
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
+        backBtn.addActionListener(this::backBtnActionPerformed);
+        getContentPane().add(backBtn);
+        backBtn.setBounds(10, 10, 30, 30);
 
         cinemaLocation.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         cinemaLocation.setText("Baneshwor");
         getContentPane().add(cinemaLocation);
-        cinemaLocation.setBounds(140, 100, 70, 16);
+        cinemaLocation.setBounds(40, 90, 70, 16);
 
         movieLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         movieLabel.setText("Tere ishq mein");
         getContentPane().add(movieLabel);
-        movieLabel.setBounds(130, 80, 100, 16);
+        movieLabel.setBounds(30, 70, 330, 16);
 
         dateTime.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         dateTime.setText("Wed 10 December | 01:45 PM");
         getContentPane().add(dateTime);
-        dateTime.setBounds(130, 120, 170, 14);
+        dateTime.setBounds(30, 110, 170, 14);
 
         A.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         A.setText("A");
@@ -472,11 +542,13 @@ public class SeatSelection extends javax.swing.JFrame {
         amountLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         amountLabel.setText("Amount:");
         getContentPane().add(amountLabel);
-        amountLabel.setBounds(390, 440, 50, 16);
-        getContentPane().add(totalAmount);
-        totalAmount.setBounds(450, 430, 100, 30);
+        amountLabel.setBounds(390, 430, 50, 16);
 
-        frame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
+        totalAmount.setText("200");
+        getContentPane().add(totalAmount);
+        totalAmount.setBounds(450, 420, 100, 30);
+
+        frame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACKGROUND_PAGE.png"))); // NOI18N
         getContentPane().add(frame);
         frame.setBounds(0, 0, 590, 550);
 
@@ -492,10 +564,15 @@ public class SeatSelection extends javax.swing.JFrame {
         
     }//GEN-LAST:event_A1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
+        System.out.println("SeatSelection: going back to TheaterView");
+        TheaterView view = new TheaterView();
+        controller.TheaterController controller = new controller.TheaterController(view);
+        controller.open();
+        this.dispose();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -573,12 +650,12 @@ public class SeatSelection extends javax.swing.JFrame {
     private javax.swing.JButton F7;
     private javax.swing.JLabel amountLabel;
     private javax.swing.JLabel available;
+    private javax.swing.JButton backBtn;
     private javax.swing.JButton buyTicket;
     private javax.swing.JLabel cinemaLocation;
     private javax.swing.JLabel dateTime;
     private javax.swing.JLabel frame;
     private javax.swing.JTextField greyColor;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -586,7 +663,6 @@ public class SeatSelection extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JLabel movieFigure;
     private javax.swing.JLabel movieLabel;
     private javax.swing.JLabel sold;
     private javax.swing.JTextField soldColor;

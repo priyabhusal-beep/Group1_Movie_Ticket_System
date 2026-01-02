@@ -5,6 +5,8 @@
 package view;
 
 import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -19,6 +21,34 @@ public class BookingTicket extends javax.swing.JFrame {
      */
     public BookingTicket() {
         initComponents();
+        paymentGroup = new ButtonGroup();
+        paymentGroup.add(rbCash);
+        paymentGroup.add(rbCard);
+        paymentGroup.add(rbEsewa);
+        
+     
+    }
+
+    public BookingTicket(String movie, String seats, String seatPriceStr, String totalSeatsCount, String bookingTimeStr, String showTime, String totalAmt) {
+        this();
+        // populate fields
+        this.movieName.setText(movie);
+        this.seatsNumber.setText(seats);
+        this.seatPrice.setText(seatPriceStr);
+        this.totalSeats.setText(totalSeatsCount);
+        this.dateTime.setText(showTime);
+        this.totalPayingAmount.setText(totalAmt);
+
+        // wire confirm button: show dialog, on OK open TicketReceipt
+        confirmButton.addActionListener(evt -> {
+            int res = javax.swing.JOptionPane.showConfirmDialog(this, "Confirm booking?", "Confirm", javax.swing.JOptionPane.OK_CANCEL_OPTION);
+            if (res == javax.swing.JOptionPane.OK_OPTION) {
+                System.out.println("BookingTicket: confirmed, opening TicketReceipt");
+                TicketReceipt receipt = new TicketReceipt(movie, seats, seatPriceStr, totalSeatsCount, java.time.LocalDateTime.now().toString(), showTime, totalAmt);
+                receipt.setVisible(true);
+                this.dispose();
+            }
+        });
     }
 
     /**
@@ -31,6 +61,7 @@ public class BookingTicket extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel7 = new javax.swing.JLabel();
+        paymentGroup = new javax.swing.ButtonGroup();
         ticketDetails = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -38,7 +69,6 @@ public class BookingTicket extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         movieName = new javax.swing.JLabel();
-        confirmBooking = new javax.swing.JButton();
         theaterName = new javax.swing.JLabel();
         seatsNumber = new javax.swing.JLabel();
         totalSeats = new javax.swing.JLabel();
@@ -46,6 +76,13 @@ public class BookingTicket extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         seatPrice = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        rbCash = new javax.swing.JRadioButton();
+        rbCard = new javax.swing.JRadioButton();
+        rbEsewa = new javax.swing.JRadioButton();
+        confirmButton = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        dateTime = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         jLabel7.setText("jLabel7");
@@ -56,75 +93,117 @@ public class BookingTicket extends javax.swing.JFrame {
         ticketDetails.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ticketDetails.setText("Ticket Details");
         getContentPane().add(ticketDetails);
-        ticketDetails.setBounds(80, 50, 140, 16);
+        ticketDetails.setBounds(110, 30, 140, 40);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Movie");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 90, 70, 20);
+        jLabel1.setBounds(20, 70, 70, 20);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Seats No");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 130, 80, 16);
+        jLabel4.setBounds(20, 100, 80, 16);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Total Seats");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(20, 200, 70, 20);
+        jLabel5.setBounds(20, 150, 70, 20);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Your Total Bill");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(20, 250, 120, 20);
+        jLabel6.setBounds(140, 210, 120, 20);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Total Paying Amount");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(20, 290, 150, 20);
+        jLabel8.setBounds(30, 250, 150, 20);
 
-        movieName.setText("Tere Ishq Mein");
+        movieName.setText("haha");
         getContentPane().add(movieName);
-        movieName.setBounds(280, 80, 170, 30);
-
-        confirmBooking.setBackground(new java.awt.Color(153, 204, 255));
-        confirmBooking.setText("Confirm");
-        getContentPane().add(confirmBooking);
-        confirmBooking.setBounds(140, 370, 160, 23);
+        movieName.setBounds(270, 60, 170, 30);
         getContentPane().add(theaterName);
         theaterName.setBounds(310, 0, 170, 30);
 
         seatsNumber.setText("A1");
         getContentPane().add(seatsNumber);
-        seatsNumber.setBounds(280, 120, 170, 30);
+        seatsNumber.setBounds(270, 90, 170, 30);
 
         totalSeats.setText("2");
         getContentPane().add(totalSeats);
-        totalSeats.setBounds(280, 200, 170, 30);
+        totalSeats.setBounds(270, 150, 170, 30);
 
         totalPayingAmount.setText("400");
         getContentPane().add(totalPayingAmount);
-        totalPayingAmount.setBounds(280, 290, 170, 30);
+        totalPayingAmount.setBounds(290, 240, 170, 30);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setText("Seat Price");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(20, 160, 80, 30);
+        jLabel9.setBounds(20, 120, 80, 30);
 
         seatPrice.setText("200");
         getContentPane().add(seatPrice);
-        seatPrice.setBounds(280, 160, 170, 30);
+        seatPrice.setBounds(270, 120, 170, 30);
 
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
         getContentPane().add(backButton);
         backButton.setBounds(10, 10, 26, 30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 490, 460);
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Select Payment Method");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(130, 280, 170, 30);
 
-        setBounds(0, 0, 497, 468);
+        rbCash.setBackground(new java.awt.Color(153, 204, 255));
+        rbCash.setText("Cash");
+        rbCash.setPreferredSize(new java.awt.Dimension(55, 21));
+        getContentPane().add(rbCash);
+        rbCash.setBounds(30, 310, 80, 21);
+
+        rbCard.setBackground(new java.awt.Color(153, 204, 255));
+        rbCard.setText("Card");
+        rbCard.setPreferredSize(new java.awt.Dimension(55, 21));
+        getContentPane().add(rbCard);
+        rbCard.setBounds(30, 330, 80, 21);
+
+        rbEsewa.setBackground(new java.awt.Color(153, 204, 255));
+        rbEsewa.setText("Esewa");
+        rbEsewa.addActionListener(this::rbEsewaActionPerformed);
+        getContentPane().add(rbEsewa);
+        rbEsewa.setBounds(30, 350, 80, 21);
+
+        confirmButton.setBackground(new java.awt.Color(102, 204, 255));
+        confirmButton.setText("Confirm");
+        confirmButton.addActionListener(this::confirmButtonActionPerformed);
+        getContentPane().add(confirmButton);
+        confirmButton.setBounds(140, 400, 200, 40);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel10.setText("Show Time");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(20, 180, 80, 20);
+
+        dateTime.setText("2026-01-05 | 01:30");
+        getContentPane().add(dateTime);
+        dateTime.setBounds(260, 186, 130, 20);
+
+        jLabel2.setBackground(new java.awt.Color(255, 204, 204));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACKGROUND_PAGE.png"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 490, 490);
+
+        setBounds(0, 0, 497, 492);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmButtonActionPerformed
+
+    private void rbEsewaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEsewaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbEsewaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,9 +232,12 @@ public class BookingTicket extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
-    private javax.swing.JButton confirmBooking;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JLabel dateTime;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -163,6 +245,10 @@ public class BookingTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel movieName;
+    private javax.swing.ButtonGroup paymentGroup;
+    private javax.swing.JRadioButton rbCard;
+    private javax.swing.JRadioButton rbCash;
+    private javax.swing.JRadioButton rbEsewa;
     private javax.swing.JLabel seatPrice;
     private javax.swing.JLabel seatsNumber;
     private javax.swing.JLabel theaterName;
@@ -170,13 +256,14 @@ public class BookingTicket extends javax.swing.JFrame {
     private javax.swing.JLabel totalPayingAmount;
     private javax.swing.JLabel totalSeats;
     // End of variables declaration//GEN-END:variables
+
 public void setTotalPayment(double TotalPayment) {
     totalPayingAmount.setText(String.valueOf(TotalPayment));
 }
 
-public javax.swing.JButton getConfirmButton() {
-    return confirmBooking;
-}
+//public javax.swing.JButton getConfirmButton() {
+//    return confirmBooking;
+//}
 
 public javax.swing.JLabel getMovie() {
     return movieName;
@@ -197,6 +284,10 @@ public javax.swing.JLabel getTotalSeats() {
     return totalSeats;
 }
 
+public javax.swing.JLabel getDateTime() {
+    return dateTime;
+}
+
 public javax.swing.JLabel getTotalPayingAmount() {
     return totalPayingAmount;
 }
@@ -207,7 +298,21 @@ public void getBackButton(ActionListener l){
 }
 
 public void getConfirmBooking(ActionListener l){
-    confirmBooking.addActionListener(l);
+    confirmButton.addActionListener(l);
+}
+
+
+
+public JRadioButton getRbCash() {
+    return rbCash;
+}
+
+public JRadioButton getRbCard() {
+    return rbCard;
+}
+
+public JRadioButton getRbEsewa() {
+    return rbEsewa;
 }
 
 }

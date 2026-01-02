@@ -17,7 +17,11 @@ public class Akhanda_summary extends javax.swing.JFrame {
      */
     public Akhanda_summary() {
         initComponents();
-        
+        setLocationRelativeTo(null);
+    }
+
+    public void setShowInfo(String info) {
+        this.jLabel4.setText(info);
     }
 
     /**
@@ -29,18 +33,20 @@ public class Akhanda_summary extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        akhandaMovie = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        seatSelectionBtn = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Screenshot 2025-12-11 080206.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 320, 410));
+        akhandaMovie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AKHANDA.png"))); // NOI18N
+        getContentPane().add(akhandaMovie, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 310, 400));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel3.setText("NOW SHOWING");
@@ -48,7 +54,7 @@ public class Akhanda_summary extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jLabel4.setText("Akhanda 2 - Thaandavam (2025)");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 230, 50));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 280, 50));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -57,14 +63,31 @@ public class Akhanda_summary extends javax.swing.JFrame {
         jTextArea1.setText("A heartwarming journey explores the connection between children's innocence, the natural world, and \nspiritual faith as communities strive for progress.\n\nLanguage:\nGenre: Action\nCast: Nandamuri BalakrishnaSamyuktha MenonAadhi PinisettyKabir Duhan Singh\nDirector: Boyapati Srinu");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 520, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 520, 110));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
+        seatSelectionBtn.setBackground(new java.awt.Color(153, 204, 255));
+        seatSelectionBtn.setText("Seat Selection");
+        seatSelectionBtn.addActionListener(this::seatSelectionBtnActionPerformed);
+        getContentPane().add(seatSelectionBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 460, 170, -1));
+
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
+        backButton.addActionListener(this::backButtonActionPerformed);
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 30, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACKGROUND_PAGE.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 720));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 690, 740));
 
-        setBounds(0, 0, 700, 650);
+        setBounds(0, 0, 703, 730);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        TheaterView view = new TheaterView();
+        view.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,12 +114,23 @@ public class Akhanda_summary extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new Akhanda_summary().setVisible(true));
     }
 
+    private void seatSelectionBtnActionPerformed(java.awt.event.ActionEvent evt) {
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("Akhanda_summary: opening SeatSelection");
+        SeatSelection seat = new SeatSelection(this.jLabel4.getText(), "");
+        seat.setVisible(true);
+        this.dispose();
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel akhandaMovie;
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton seatSelectionBtn;
     // End of variables declaration//GEN-END:variables
 }

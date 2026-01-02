@@ -39,14 +39,14 @@ public class LoginView extends javax.swing.JFrame {
         Register = new javax.swing.JButton();
         Login = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(568, 404));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel5.setText("CINEBOOK");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 140, 180, 70));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 130, 70));
 
         Email.setBackground(new java.awt.Color(255, 255, 204));
         Email.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -58,39 +58,35 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
         Email.addActionListener(this::EmailActionPerformed);
-        getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 210, 220, 30));
+        getContentPane().add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 220, 30));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Email Address");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 200, 80, 40));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 80, 40));
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Password");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 260, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
 
         forgotPassword.setBackground(new java.awt.Color(255, 255, 153));
         forgotPassword.setForeground(new java.awt.Color(102, 204, 255));
         forgotPassword.setText("Forget Password?");
-        forgotPassword.addActionListener(this::forgotPasswordActionPerformed);
-        getContentPane().add(forgotPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 320, -1, -1));
-        getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 260, 220, 30));
+        getContentPane().add(forgotPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
+        getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 220, 30));
 
-        Register.setBackground(new java.awt.Color(255, 51, 51));
+        Register.setBackground(new java.awt.Color(255, 255, 204));
         Register.setText("REGISTER");
-        Register.addActionListener(this::RegisterActionPerformed);
-        getContentPane().add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 423, 100, 40));
+        getContentPane().add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 100, -1));
 
-        Login.setBackground(new java.awt.Color(153, 255, 102));
+        Login.setBackground(new java.awt.Color(255, 255, 204));
         Login.setText("LOGIN");
-        Login.addActionListener(this::LoginActionPerformed);
-        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(872, 370, 110, 30));
+        getContentPane().add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 110, 20));
 
         jLabel1.setBackground(new java.awt.Color(51, 255, 102));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/WhatsApp Image 2025-12-02 at 20.44.06_7882f091.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 1100, 748));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frame.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 400));
 
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 260, -1, -1));
-
-        setBounds(0, 0, 1086, 756);
+        setBounds(0, 0, 581, 408);
     }// </editor-fold>//GEN-END:initComponents
 
     private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
@@ -117,6 +113,9 @@ public class LoginView extends javax.swing.JFrame {
 
     private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
         // TODO add your handling code here:
+        SignUp signup = new SignUp();
+        signup.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_RegisterActionPerformed
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
@@ -156,7 +155,6 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JButton Register;
     private javax.swing.JButton forgotPassword;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

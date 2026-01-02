@@ -19,6 +19,7 @@ public class Tereiskme_summary extends javax.swing.JFrame {
      */
     public Tereiskme_summary() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -35,13 +36,15 @@ public class Tereiskme_summary extends javax.swing.JFrame {
         movieName = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        seatSelectionBtn = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Screenshot 2025-12-11 102738.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 320, 410));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ishqmein.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 320, 380));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel3.setText("NOW SHOWING");
@@ -60,12 +63,37 @@ public class Tereiskme_summary extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 500, 110));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 720));
+        seatSelectionBtn.setBackground(new java.awt.Color(153, 204, 255));
+        seatSelectionBtn.setText("Seat Selection");
+        seatSelectionBtn.addActionListener(this::seatSelectionBtnActionPerformed);
+        getContentPane().add(seatSelectionBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 210, -1));
 
-        setBounds(0, 0, 703, 650);
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
+        backButton.addActionListener(this::backButtonActionPerformed);
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACKGROUND_PAGE.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 640));
+
+        setBounds(0, 0, 683, 644);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void seatSelectionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatSelectionBtnActionPerformed
+        // open seat selection and pass movie/show info
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("Tereiskme_summary: opening SeatSelection");
+        SeatSelection seat = new SeatSelection(this.movieName.getText(), "");
+        seat.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_seatSelectionBtnActionPerformed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        TheaterView view = new TheaterView();
+        controller.TheaterController controller = new controller.TheaterController(view);
+        controller.open();
+        this.dispose();
+    }
 
     /**
      * @param args the command line arguments
@@ -93,16 +121,22 @@ public class Tereiskme_summary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel movieName;
+    private javax.swing.JButton seatSelectionBtn;
     // End of variables declaration//GEN-END:variables
 
     void setVisble(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    public void setShowInfo(String info) {
+        this.movieName.setText(info);
     }
     
 

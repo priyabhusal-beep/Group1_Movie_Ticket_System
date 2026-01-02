@@ -48,6 +48,9 @@ public class LoginController {
 
                 if (check) {
                     JOptionPane.showMessageDialog(loginView, "Login successful");
+                    // Close login then open theater
+                    close();
+                    System.out.println("LoginController: opening TheaterView");
                     TheaterView view = new TheaterView();
                     TheaterController controller = new TheaterController(view);
                     controller.open();

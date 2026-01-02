@@ -17,6 +17,7 @@ public class JhariPachhiKoIndreni_summary extends javax.swing.JFrame {
      */
     public JhariPachhiKoIndreni_summary() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,21 +34,23 @@ public class JhariPachhiKoIndreni_summary extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        backButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Screenshot 2025-12-22 075141.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 310, 410));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/UPCOMMING_JHARI_PACHI_KO.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 310, 370));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel3.setText("COMMING SOON");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 180, 50));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 180, 50));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jLabel4.setText("Jhari Pachhi Ko Indreni (2025)");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, 200, 50));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 200, 50));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -56,13 +59,20 @@ public class JhariPachhiKoIndreni_summary extends javax.swing.JFrame {
         jTextArea1.setText("A family drama depicting true struggle of an individual who rises against political corruption, fighting to protect\n his conscience while confronting a system built on injustice.\n\nLanguage:\nGenre: Drama\nCast: Ganesh UpretiDeepa Shree NiroulaRamesh UpretiSarita Giri\nDirector: Arjun Ghimire");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 520, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 520, 110));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
+
+        jButton1.setBackground(new java.awt.Color(153, 204, 255));
+        jButton1.setText("Seat Selection");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 160, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACKGROUND_PAGE.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 720));
 
-        setBounds(0, 0, 703, 650);
+        setBounds(0, 0, 701, 729);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -91,6 +101,8 @@ public class JhariPachhiKoIndreni_summary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -98,4 +110,20 @@ public class JhariPachhiKoIndreni_summary extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    private void seatSelectionActionPerformed(java.awt.event.ActionEvent evt) {
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("JhariPachhiKoIndreni_summary: opening SeatSelection");
+        SeatSelection seat = new SeatSelection(this.jLabel4.getText(), "");
+        seat.setVisible(true);
+        this.dispose();
+    }
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("JhariPachhiKoIndreni_summary: going back to comingsoon");
+        comingsoon cs = new comingsoon();
+        cs.setVisible(true);
+        this.dispose();
+    }
 }

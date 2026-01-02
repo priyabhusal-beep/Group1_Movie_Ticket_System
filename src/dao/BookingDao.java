@@ -4,8 +4,6 @@
  */
 package dao;
 
-
-
 import database.MySqlConnection;
 import model.BookingDetails;
 
@@ -66,29 +64,28 @@ public class BookingDao {
     // ==================================================
     // 2️⃣ SAVE BOOKING SEATS
     // ==================================================
-    public void saveBookingSeat(int bookingId, String seatNo, int seatPrice) {
+    public void saveBookingSeat(int bookingId, int showId, String seatNo, int seatPrice) {
 
         Connection conn = mysql.openConnection();
 
         String sql = """
-            INSERT INTO booking_seats (booking_id, seat_number, seat_price)
-            VALUES (?, ?, ?)
+            INSERT INTO booking_seats (booking_id, show_id, seat_number, seat_price)
+            VALUES (?, ?, ?, ?)
         """;
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
-
             ps.setInt(1, bookingId);
-            ps.setString(2, seatNo);
-            ps.setInt(3, seatPrice);
-
+            ps.setInt(2, showId);
+            ps.setString(3, seatNo);
+            ps.setInt(4, seatPrice);
             ps.executeUpdate();
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             mysql.closeConnection(conn);
         }
     }
+
 
     // ==================================================
     // 3️⃣ GET BOOKING DETAILS FOR CONFIRMATION SCREEN

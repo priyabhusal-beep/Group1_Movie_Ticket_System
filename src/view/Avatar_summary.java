@@ -17,6 +17,7 @@ public class Avatar_summary extends javax.swing.JFrame {
      */
     public Avatar_summary() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,13 +34,15 @@ public class Avatar_summary extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        backButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Screenshot 2025-12-19 093947.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 300, 370));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Avatarfinal.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 300, 370));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel3.setText("NOW SHOWING");
@@ -56,14 +59,41 @@ public class Avatar_summary extends javax.swing.JFrame {
         jTextArea1.setText("Jake and Neytiri's family grapples with grief after Neteyam's death, encountering a new, aggressive Na'vi tribe, \nthe Ash People, who are led by the fiery Varang, as the conflict on Pandora escalates and a new moral focus \nemerges.\n\nLanguage: English\nGenre: Action, Adventure\nCast: Kate WinsletSigourney WeaverZoe Saldaña\nDirector: James Cameron");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 520, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 520, 130));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
+        backButton.addActionListener(this::backButtonActionPerformed);
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 30, 30));
+
+        jButton1.setBackground(new java.awt.Color(153, 204, 255));
+        jButton1.setText("Seat Selection");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, 190, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACKGROUND_PAGE.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 730));
 
-        setBounds(0, 0, 704, 740);
+        setBounds(0, 0, 703, 736);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        comingsoon comingsrc = new comingsoon();
+        comingsrc.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("Avatar_summary: opening SeatSelection");
+        SeatSelection seatSelection = new SeatSelection(this.jLabel4.getText(), "");
+        seatSelection.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,6 +121,8 @@ public class Avatar_summary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

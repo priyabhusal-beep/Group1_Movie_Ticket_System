@@ -17,6 +17,7 @@ public class dhurandar_summary extends javax.swing.JFrame {
      */
     public dhurandar_summary() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,21 +34,26 @@ public class dhurandar_summary extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        backBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Screenshot 2025-12-22 074935.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 300, 390));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dhurandar.png"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(200, 30, 310, 390);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel3.setText("NOW SHOWING");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 180, 50));
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(280, 410, 180, 50);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jLabel4.setText("Dhurandhar (2025)");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 170, 50));
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(280, 450, 170, 50);
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -56,11 +62,21 @@ public class dhurandar_summary extends javax.swing.JFrame {
         jTextArea1.setText("Dhurandhar is a star-studded saga inspired by incredible true events set in the gritty criminal vein of underworld \nwith a backdrop of Indian patriotism, featuring action sequences, Shakespearean betrayals, and tradecrafts of\n espionage\n\nLanguage:\nGenre: Action, Drama\nCast: Ranveer Singh Sanjay DuttAkshya Khanna\nDirector: Aditya Dhar");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 520, 150));
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(110, 490, 510, 120);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 720));
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
+        getContentPane().add(backBtn);
+        backBtn.setBounds(10, 10, 26, 30);
+
+        jButton1.setBackground(new java.awt.Color(153, 204, 255));
+        jButton1.setText("Seat Selection");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(460, 460, 210, 23);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACKGROUND_PAGE.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 690, 720);
 
         setBounds(0, 0, 703, 650);
     }// </editor-fold>//GEN-END:initComponents
@@ -91,6 +107,8 @@ public class dhurandar_summary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -98,4 +116,19 @@ public class dhurandar_summary extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    private void seatSelectionActionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println("dhurandar_summary: opening SeatSelection");
+        SeatSelection seat = new SeatSelection(this.jLabel4.getText(), "");
+        seat.setVisible(true);
+        this.dispose();
+    }
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {
+        System.out.println("dhurandar_summary: going back to TheaterView");
+        TheaterView view = new TheaterView();
+        controller.TheaterController controller = new controller.TheaterController(view);
+        controller.open();
+        this.dispose();
+    }
 }

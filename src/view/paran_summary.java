@@ -17,6 +17,7 @@ public class paran_summary extends javax.swing.JFrame {
      */
     public paran_summary() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,21 +34,23 @@ public class paran_summary extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        backButton = new javax.swing.JButton();
+        seatSelection = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1paran1.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 320, 410));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1PARAM.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 320, 410));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
         jLabel3.setText("NOW SHOWING");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 180, 50));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, 180, 50));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jLabel4.setText("Paran (2025) 146 mins");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 170, 50));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 170, 50));
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -56,13 +59,20 @@ public class paran_summary extends javax.swing.JFrame {
         jTextArea1.setText("Paran is a heartfelt family drama about Dharmanath (Neer Shah), who treasures his children as his “essence of life” \nand dreams of growing old in their love. Set in Dhankuta, the film beautifully \nportrays love, legacy, and the true meaning of family.\n\nLanguage:\nGenre: Drama\nCast: Nir ShahMadan Krishna ShresthaPuja Chand LamYaman ShresthaKeki AdhikariAnjana BarailiMahesh Tripathi\nDirector: Deepak Prasad Acharya");
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 520, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 520, 150));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/957e753c-f7e4-4237-bdc2-3fae77e7ac3d.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACK.png"))); // NOI18N
+        backButton.addActionListener(this::backButtonActionPerformed);
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+
+        seatSelection.setBackground(new java.awt.Color(153, 204, 255));
+        seatSelection.setText("Seat Selection");
+        getContentPane().add(seatSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, 190, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BACKGROUND_PAGE.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 720));
 
-        setBounds(0, 0, 703, 650);
+        setBounds(0, 0, 703, 723);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -91,11 +101,22 @@ public class paran_summary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton seatSelection;
     // End of variables declaration//GEN-END:variables
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        ((javax.swing.JButton)evt.getSource()).setEnabled(false);
+        System.out.println("paran_summary: returning to TheaterView");
+        TheaterView view = new TheaterView();
+        controller.TheaterController controller = new controller.TheaterController(view);
+        controller.open();
+        this.dispose();
+    }
 }

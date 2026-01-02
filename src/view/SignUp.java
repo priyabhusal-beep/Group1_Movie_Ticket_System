@@ -37,7 +37,6 @@ public class SignUp extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        signUp = new javax.swing.JButton();
         signIn = new javax.swing.JButton();
         mobileNumber = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
@@ -48,7 +47,6 @@ public class SignUp extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        cancel = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
@@ -64,17 +62,10 @@ public class SignUp extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
         getContentPane().setLayout(null);
 
-        signUp.setBackground(new java.awt.Color(204, 204, 255));
-        signUp.setText("SIGN UP");
-        signUp.addActionListener(this::signUpActionPerformed);
-        getContentPane().add(signUp);
-        signUp.setBounds(400, 40, 80, 20);
-
         signIn.setBackground(new java.awt.Color(238, 242, 111));
-        signIn.setText("SIGN IN");
-        signIn.addActionListener(this::signInActionPerformed);
+        signIn.setText("LogIn");
         getContentPane().add(signIn);
-        signIn.setBounds(310, 40, 90, 20);
+        signIn.setBounds(300, 330, 90, 20);
 
         mobileNumber.setBackground(new java.awt.Color(238, 242, 111));
         mobileNumber.setText("Enter your phone number");
@@ -101,7 +92,7 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
         getContentPane().add(email);
-        email.setBounds(310, 160, 170, 30);
+        email.setBounds(310, 170, 170, 30);
 
         fullName.setBackground(new java.awt.Color(238, 242, 111));
         fullName.setText("Enter your full name");
@@ -118,7 +109,7 @@ public class SignUp extends javax.swing.JFrame {
         fullName.setBounds(310, 220, 170, 30);
 
         password.setBackground(new java.awt.Color(238, 242, 111));
-        password.setText("PASWWORD");
+        password.setText("111111111");
         password.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 passwordFocusGained(evt);
@@ -140,9 +131,8 @@ public class SignUp extends javax.swing.JFrame {
         confirm.setBackground(new java.awt.Color(111, 211, 242));
         confirm.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         confirm.setText("Confirm");
-        confirm.addActionListener(this::confirmActionPerformed);
         getContentPane().add(confirm);
-        confirm.setBounds(370, 330, 72, 21);
+        confirm.setBounds(410, 330, 72, 21);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Mobile Number");
@@ -159,12 +149,6 @@ public class SignUp extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(340, 200, 80, 16);
 
-        cancel.setBackground(new java.awt.Color(238, 242, 111));
-        cancel.setText("X");
-        cancel.addActionListener(this::cancelActionPerformed);
-        getContentPane().add(cancel);
-        cancel.setBounds(490, 10, 50, 30);
-
         jLabel2.setBackground(new java.awt.Color(255, 204, 102));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frame.png"))); // NOI18N
         jLabel2.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -175,15 +159,15 @@ public class SignUp extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 560, 410);
 
-        pack();
+        setBounds(0, 0, 570, 421);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_signUpActionPerformed
 
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
         // TODO add your handling code here:
+        LoginView login = new LoginView();
+        login.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_signInActionPerformed
 
     private void fullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fullNameActionPerformed
@@ -247,7 +231,7 @@ public class SignUp extends javax.swing.JFrame {
 
     private void passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusGained
         // TODO add your handling code here:
-        if(String.valueOf(password.getPassword()).equals("Enter your password")){
+        if(String.valueOf(password.getPassword()).equals("111111111")){
         password.setText("");
         }
     }//GEN-LAST:event_passwordFocusGained
@@ -255,13 +239,10 @@ public class SignUp extends javax.swing.JFrame {
     private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
         // TODO add your handling code here:
         if(String.valueOf(password.getPassword()).equals("")){
-        password.setText("Enter your password");
+        password.setText("111111111");
+        
     }
     }//GEN-LAST:event_passwordFocusLost
-
-    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelActionPerformed
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
@@ -293,7 +274,6 @@ public class SignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton cancel;
     private javax.swing.JButton confirm;
     private javax.swing.JTextField email;
     private javax.swing.JTextField fullName;
@@ -312,13 +292,9 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JTextField mobileNumber;
     private javax.swing.JPasswordField password;
     private javax.swing.JButton signIn;
-    private javax.swing.JButton signUp;
     // End of variables declaration//GEN-END:variables
 
-public void AddSignUpListener(ActionListener listener) {
-        signUp.addActionListener(listener);
-        
-    }
+
 public void AddSignInListener(ActionListener listener) {
         signIn.addActionListener(listener);    
     }
@@ -327,9 +303,6 @@ public void AddConfirmListener(ActionListener listener) {
         confirm.addActionListener(listener);        
     }
 
-public void AddCancelListener(ActionListener listener) {
-        cancel.addActionListener(listener);       
-    }
 
 
 public javax.swing.JTextField getMobileNumber() {

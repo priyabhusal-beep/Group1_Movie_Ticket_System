@@ -40,6 +40,8 @@ public class profileiconview extends javax.swing.JFrame {
         address_input = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         phoneno_input = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,7 +66,7 @@ public class profileiconview extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Phone No.");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(50, 200, 80, 16);
+        jLabel5.setBounds(60, 200, 80, 16);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -146,12 +148,29 @@ public class profileiconview extends javax.swing.JFrame {
         getContentPane().add(phoneno_input);
         phoneno_input.setBounds(130, 200, 100, 20);
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setText("Profile");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(380, 0, 45, 20);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+        getContentPane().add(jButton2);
+        jButton2.setBounds(380, 20, 56, 57);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/finalback.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 460, 320);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        profileiconview profile = new profileiconview();
+        profile.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,11 +200,13 @@ public class profileiconview extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel address_input;
     private javax.swing.JLabel email_input;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
